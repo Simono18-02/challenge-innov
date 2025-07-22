@@ -41,7 +41,7 @@
             line-height: 1.7;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             color: var(--text-dark);
@@ -368,6 +368,29 @@
         #gs { animation-delay: 0.4s; }
         #gc { animation-delay: 0.5s; }
         
+        /* --- Descriptions sous l'organigramme --- */
+        .descriptions-container {
+            max-width: 900px;
+            margin: 80px auto 0 auto;
+            text-align: left;
+        }
+        .description-item {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-red);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+        .description-item h4 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .description-item p {
+            color: #555;
+        }
+
         /* --- CALENDRIER SECTION --- */
         .calendar-list {
             max-width: 800px;
@@ -495,6 +518,8 @@
             
             .calendar-item { flex-direction: column; text-align: center; gap: 20px; }
         }
+
+
     </style>
 </head>
 <body>
@@ -603,16 +628,36 @@
                     <div class="org-level team-level">
                         <div class="org-card" id="gm">
                             <h4>GM</h4>
-                            <p>Simon A.</p>
+                            <p>Simon ADAM</p>
                         </div>
                         <div class="org-card" id="gs">
                             <h4>GS</h4>
-                            <p>Manon A.</p>
+                            <p>Manon ARIAS.</p>
                         </div>
                         <div class="org-card" id="gc">
                             <h4>GC</h4>
-                            <p>Mathias A.</p>
+                            <p>Mathias AUPECLE.</p>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- Descriptions des rôles -->
+                <div class="descriptions-container">
+                    <div class="description-item">
+                        <h4>Génie Mécanique – Simon Adam</h4>
+                        <p>Description : <span style="color: red;">(A compléter)</span>Le challenge GM est axé sur la robotique et l'ingénierie mécanique. Les étudiants doivent concevoir des robots suiveur de ligne.</p>
+                    </div>
+                    <div class="description-item">
+                        <h4>Génie Sensoriel – Manon Arias</h4>
+                        <p>Description : <span style="color: red;">(A compléter)</span> Ce challenge pousse les participants à explorer l'expérience utilisateur, la perception sensorielle et les technologies interactives.</p>
+                    </div>
+                    <div class="description-item">
+                        <h4>Génie Civil – Mathias Aupecle</h4>
+                        <p>Description : <span style="color: red;">(A compléter)</span>Les étudiants travaillent sur des projets d'aménagement ou d’infrastructure, intégrant des enjeux environnementaux et structurels.</p>
+                    </div>
+                    <div class="description-item">
+                        <h4>Challenge international – Clément Frêne</h4>
+                        <p>Description : <span style="color: red;">(A compléter)</span> "Invent for the Planet", organisé par Texas A&M, met les étudiants en situation d’innovation rapide sur un sujet avec des équipes internationales.</p>
                     </div>
                 </div>
             </div>
@@ -728,7 +773,7 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; 2024 ENISE - École Centrale de Lyon. Tous droits réservés.
+            © 2024 ENISE - École Centrale de Lyon. Tous droits réservés.
         </div>
     </footer>
 

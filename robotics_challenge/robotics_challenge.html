@@ -141,6 +141,23 @@
             position: relative;
             transition: color 0.3s ease;
         }
+		/* NOUVEAU STYLE POUR LE LOGO IMAGE */
+        .logo-img {
+            height: 50px; /* Ajustez la hauteur selon vos besoins */
+            width: auto;
+            display: block; /* Empêche les espaces indésirables */
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-red);
+            transition: width 0.3s ease;
+        }
 
         .nav-links a::after {
             content: '';
@@ -447,13 +464,20 @@
             h2 { font-size: 2rem; }
             .container { padding: 80px 0; }
         }
+        #about p {
+            color: #555;
+            text-align: justify; /* --- TEXTE JUSTIFIÉ ICI --- */
+        }
+
 
     </style>
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="logo">ENISE<span>.RC</span></a>
+		<a href="#home" class="logo">
+			<img src="../logo.png" alt="ENISE" class="logo-img">
+		</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>
