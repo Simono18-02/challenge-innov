@@ -129,7 +129,16 @@
             position: relative;
             transition: color 0.3s ease;
         }
-
+        .logo {
+            text-decoration: none;
+        }
+        
+        /* NOUVEAU STYLE POUR LE LOGO IMAGE */
+        .logo-img {
+            height: 50px; /* Ajustez la hauteur selon vos besoins */
+            width: auto;
+            display: block; /* Empêche les espaces indésirables */
+        }
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -410,7 +419,9 @@
 <body>
 
     <header class="header">
-        <a href="#home" class="logo">ENISE<span>.</span></a>
+		<a href="#home" class="logo">
+			<img src="logo.png" alt="ENISE" class="logo-img">
+		</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
