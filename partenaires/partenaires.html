@@ -30,11 +30,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.7; }
         h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--text-dark); }
-        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; font-weight: 600; }
-        h2::after { content: ''; display: block; width: 70px; height: 4px; background-color: var(--primary-red); margin: 10px auto 0; border-radius: 2px; }
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 100px 0; }
         
-        /* CORRECTION : On s'assure que les sections paires ont un fond gris */
+        /* AMÉLIORATION : Typographie fluide pour les titres principaux */
+        h2 { 
+            font-size: clamp(2rem, 5vw, 2.5rem); /* S'adapte de 2rem à 2.5rem */
+            text-align: center; margin-bottom: 60px; position: relative; font-weight: 600; 
+        }
+        h2::after { content: ''; display: block; width: 70px; height: 4px; background-color: var(--primary-red); margin: 10px auto 0; border-radius: 2px; }
+        
+        /* AMÉLIORATION : Espacement vertical fluide et largeur contrôlée */
+        .container { 
+            width: 90%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: clamp(60px, 10vw, 100px) 0; /* Espacement vertical adaptatif */
+        }
+        
         main section:nth-of-type(even) { background-color: var(--section-bg); }
 
         .btn {
@@ -61,8 +72,8 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .logo-img { height: 50px; width: auto; display: block; }
-        .nav-links { list-style: none; display: flex; align-items: center; }
-        .nav-links li { margin-left: 30px; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 30px; }
+        .nav-links li { margin: 0; }
         .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 600; padding-bottom: 5px; position: relative; transition: color 0.3s ease; }
         .nav-links a:not(.btn-header)::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
         .nav-links a:hover:not(.btn-header) { color: var(--primary-red); }
@@ -74,17 +85,30 @@
         
         /* --- SECTION HÉROS SPÉCIFIQUE POUR LES PARTENAIRES --- */
         .hero-partners {
-            padding-top: 150px; height: 60vh;
+            padding: 150px 5% 50px; /* Ajustement du padding */
+            min-height: 60vh;
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop');
-            background-size: cover; background-position: center;
+            background-size: cover; background-position: center; background-attachment: fixed; /* Ajout d'un effet parallax */
             display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center; color: var(--text-light);
         }
-        .hero-partners h1 { font-size: 3.5rem; color: var(--text-light); text-shadow: 2px 2px 8px rgba(0,0,0,0.7); max-width: 800px; }
-        .hero-partners p { font-size: 1.2rem; margin-top: 20px; max-width: 700px; font-weight: 300; }
+        /* AMÉLIORATION : Typographie fluide pour le titre principal et le paragraphe */
+        .hero-partners h1 { 
+            font-size: clamp(2.2rem, 6vw, 3.5rem); /* S'adapte de 2.2rem à 3.5rem */
+            color: var(--text-light); 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
+            max-width: 800px; 
+        }
+        .hero-partners p { 
+            font-size: clamp(1rem, 2.5vw, 1.2rem); /* S'adapte de 1rem à 1.2rem */
+            margin: 20px auto 0; /* Marge auto pour le centrage horizontal */
+            max-width: 700px; 
+            font-weight: 300; 
+        }
 
         /* --- SECTION DES AVANTAGES --- */
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
+        /* AMÉLIORATION : Grille plus robuste pour les petits écrans */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
         .benefit-card { background-color: var(--light-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .benefit-card .icon { font-size: 3rem; color: var(--primary-red); margin-bottom: 20px; }
@@ -93,10 +117,10 @@
 
         /* --- BLOC PARTENAIRE MAJORITAIRE --- */
         #major-partner .major-partner-box { background-color: var(--light-bg); border-left: 5px solid var(--primary-red); padding: 40px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.07); max-width: 900px; margin: 0 auto; }
-        #major-partner h3 { margin-bottom: 20px; font-size: 1.8rem; }
+        #major-partner h3 { margin-bottom: 20px; font-size: clamp(1.5rem, 4vw, 1.8rem); }
         #major-partner ul { list-style: none; padding: 0; color: #555; }
-        #major-partner li { margin-bottom: 15px; display: flex; align-items: center; }
-        #major-partner li i { color: var(--primary-red); margin-right: 15px; font-size: 1.2rem; width: 20px; }
+        #major-partner li { margin-bottom: 15px; display: flex; align-items: flex-start; }
+        #major-partner li i { color: var(--primary-red); margin-right: 15px; font-size: 1.2rem; width: 20px; padding-top: 4px; }
 
         /* --- FORMULAIRE DE CONTACT --- */
         .form-container { max-width: 750px; margin: 0 auto; background: var(--light-bg); padding: 40px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
@@ -113,7 +137,7 @@
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-red); box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1); }
         .form-group textarea { resize: vertical; min-height: 120px; }
 
-        /* --- CORRECTION CSS : AJOUT DES STYLES DU FOOTER --- */
+        /* --- FOOTER --- */
         .footer { background-color: var(--text-dark); color: #a0a0b0; padding: 80px 5% 40px; }
         .footer-content {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -136,18 +160,46 @@
         }
 
         /* --- RESPONSIVE DESIGN --- */
+        /* Tablettes et petits ordinateurs portables (jusqu'à 992px) */
         @media (max-width: 992px) {
-            .hero-partners h1 { font-size: 2.8rem; }
+            .container { width: 90%; }
+            .hero-partners { background-attachment: scroll; } /* Effet parallax désactivé pour la performance */
         }
 
+        /* Smartphones en mode paysage et tablettes en mode portrait (jusqu'à 768px) */
         @media (max-width: 768px) {
-            .nav-links { position: fixed; top: 71px; right: -100%; width: 100%; height: calc(100vh - 71px); background-color: var(--light-bg); flex-direction: column; align-items: center; padding-top: 20px; transition: right 0.4s ease-in-out; border-top: 1px solid var(--border-color); }
+            .nav-links { 
+                position: fixed; top: 80px; /* Hauteur du header */
+                right: -100%; width: 100%; height: calc(100vh - 80px); 
+                background-color: var(--light-bg); 
+                flex-direction: column; align-items: center; 
+                padding-top: 40px; 
+                transition: right 0.4s ease-in-out; 
+                border-top: 1px solid var(--border-color);
+                gap: 0;
+            }
             .nav-links.active { right: 0; }
             .nav-links li { margin: 20px 0; }
             .menu-toggle { display: block; }
-            .hero-partners h1 { font-size: 2.2rem; }
+            
+            .header { padding: 15px 5%; /* Hauteur fixe de 80px */ }
+            .logo-img { height: 50px; }
+            
+            .hero-partners { min-height: 50vh; height: auto; padding-top: 120px; }
+
             .form { grid-template-columns: 1fr; }
             .form-group.full-width { grid-column: auto; }
+            .form-container { padding: 30px 25px; }
+        }
+        
+        /* Smartphones en mode portrait (jusqu'à 480px) */
+        @media (max-width: 480px) {
+            .container { width: 92%; }
+            .footer-content { text-align: center; }
+            .social-links { justify-content: center; }
+            .social-links a { margin: 0 5px; }
+            .footer-col p, .footer-col ul { text-align: inherit; }
+            .btn { padding: 10px 24px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -169,10 +221,8 @@
 
     <main>
         <section class="hero-partners">
-            <div class="container">
-                <h1>Devenez partenaire du Challenge Innov'Etudiants</h1>
-                <p>Soutenir le Challenge Innov'Etudiants, c’est s’engager aux côtés d’un événement dynamique, ouvert et porteur de sens, qui réunit des étudiants de tous horizons autour de défis d’ingénierie, de créativité et de collaboration.</p>
-            </div>
+            <h1>Devenez partenaire du Challenge Innov'Etudiants</h1>
+            <p>Soutenir le Challenge Innov'Etudiants, c’est s’engager aux côtés d’un événement dynamique, ouvert et porteur de sens, qui réunit des étudiants de tous horizons autour de défis d’ingénierie, de créativité et de collaboration.</p>
         </section>
 
         <section id="why-partner">
@@ -256,7 +306,8 @@
             <div class="footer-col">
                 <h4>Navigation</h4>
                  <ul>
-                    <li><a href="index.html">Accueil</a></li>
+                    <!-- CORRECTION : Lien vers ../index.html pour la cohérence -->
+                    <li><a href="../index.html">Accueil</a></li>
                     <li><a href="partenaires.html">Espace Entreprise</a></li>
                 </ul>
             </div>
@@ -282,27 +333,34 @@
         document.addEventListener('DOMContentLoaded', () => {
             const overlay = document.getElementById('page-transition-overlay');
             if (overlay) {
+                // Fait disparaître le calque de transition au chargement
                 overlay.classList.remove('visible');
             }
             
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
-            if (menuToggle) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            if (menuToggle && navLinks) {
+                // Gestion de l'ouverture/fermeture du menu mobile
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
             }
 
-            const allLinks = document.querySelectorAll('.logo-link, .nav-links a');
+            const allLinks = document.querySelectorAll('a:not([href="#"])');
             if (overlay && allLinks.length > 0) {
                  allLinks.forEach(link => {
                     link.addEventListener('click', (e) => {
                         const destinationUrl = link.href;
-                        // On applique la transition seulement si le lien ne mène pas à la page actuelle
-                        if (destinationUrl !== window.location.href) {
+                        const currentUrl = window.location.href;
+
+                        // Applique la transition seulement si le lien mène vers une autre page
+                        // et n'est pas une simple ancre.
+                        if (destinationUrl && destinationUrl !== currentUrl && !destinationUrl.includes('#')) {
                             e.preventDefault(); 
                             overlay.classList.add('visible');
                             setTimeout(() => {
                                 window.location.href = destinationUrl;
-                            }, 500);
+                            }, 500); // Durée de la transition
                         }
                     });
                 });
