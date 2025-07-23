@@ -143,7 +143,12 @@
         .logo span {
             color: var(--primary-red);
         }
-
+		/* NOUVEAU STYLE POUR LE LOGO IMAGE */
+        .logo-img {
+            height: 50px; /* Ajustez la hauteur selon vos besoins */
+            width: auto;
+            display: block; /* Empêche les espaces indésirables */
+        }
         .nav-links {
             list-style: none;
             display: flex;
@@ -651,7 +656,9 @@
 
     <!-- Header -->
     <header class="header">
-        <a href="index.html" class="logo">ENISE<span>.INT</span></a>
+		<a href="../index.html" class="logo">
+			<img src="../logo.png" alt="ENISE" class="logo-img">
+		</a>    
         <nav>
             <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>

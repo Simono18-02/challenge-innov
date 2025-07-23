@@ -469,13 +469,31 @@
             text-align: justify; /* --- TEXTE JUSTIFIÉ ICI --- */
         }
 
+        /* --- NOUVEAU : STYLE POUR LA TRANSITION DE PAGE --- */
+        #page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--light-bg);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #page-transition-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
     </style>
 </head>
 <body>
-
+	<div id="page-transition-overlay" class="visible"></div>
     <header class="header">
-		<a href="#home" class="logo">
+		<a href="../index.html" class="logo-link">
 			<img src="../logo.png" alt="ENISE" class="logo-img">
 		</a>
         <nav>
@@ -705,50 +723,83 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+      
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // --- TRANSITION D'ARRIVÉE (FADE-IN) ---
+        const overlay = document.getElementById('page-transition-overlay');
+        if (overlay) {
+            // On retire la classe 'visible' pour faire disparaître l'overlay en fondu
+            overlay.classList.remove('visible');
+        }
 
-            // --- COMPTE À REBOURS ---
-			const countdownDate = new Date("January 31, 2026 09:00:00").getTime();
-            const countdownFunction = setInterval(() => {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
+        // --- COMPTE À REBOURS ---
+        const countdownDate = new Date("January 31, 2026 09:00:00").getTime();
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
 
-                if (distance < 0) {
-                    clearInterval(countdownFunction);
-                    document.getElementById("countdown").innerHTML = "<div style='color:var(--text-light); font-size:1.5rem;'>L'événement a commencé !</div>";
-                    return;
-                }
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<div style='color:var(--text-light); font-size:1.5rem;'>L'événement a commencé !</div>";
+                return;
+            }
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById("days").innerText = days.toString().padStart(2, '0');
-                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
 
-            }, 1000);
-            
-            // --- MENU HAMBURGER RESPONSIVE ---
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+        }, 1000);
+        
+        // --- MENU HAMBURGER RESPONSIVE ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
+        if (menuToggle) { // Ajout d'une vérification pour éviter les erreurs
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
-            
-            // Fermer le menu en cliquant sur un lien
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                });
+        }
+        
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
             });
-
         });
-    </script>
+
+        // --- TRANSITION DE DÉPART POUR LE LOGO (PLACÉ ICI, CORRECTEMENT) ---
+        const logoLink = document.querySelector('.logo-link');
+        const transitionOverlay = document.getElementById('page-transition-overlay'); // On peut réutiliser la variable 'overlay' définie plus haut
+
+        if (logoLink && transitionOverlay) {
+            logoLink.addEventListener('click', (e) => {
+                // Empêche la redirection immédiate
+                e.preventDefault(); 
+                
+                const destinationUrl = logoLink.href;
+
+                // Affiche l'overlay pour démarrer le fondu de sortie
+                transitionOverlay.classList.add('visible');
+
+                // Attend la fin de l'animation avant de changer de page
+                setTimeout(() => {
+                    window.location.href = destinationUrl;
+                }, 500); // Durée de l'animation CSS
+            });
+        }
+
+    }); // <-- Le seul et unique crochet fermant pour le DOMContentLoaded
+</script>
+
+    
 </body>
 </html>
