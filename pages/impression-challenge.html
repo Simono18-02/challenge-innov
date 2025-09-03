@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concours Impression 3D - École Centrale de Lyon</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-impression.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-impression.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/impression.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+		<a href="../index.html" class="logo">
+			<img src="../assets/images/logo.png" alt="ENISE" class="logo-img">
+		</a>        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#info">Infos</a></li>
+                <li><a href="#registration">Inscriptions</a></li>
+                <li><a href="#rules">Règlement</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <video autoplay loop muted playsinline id="hero-video" src="https://assets.mixkit.co/videos/preview/mixkit-3d-printer-in-a-laboratory-4307-large.mp4"></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>CONCOURS <span>IMPRESSION 3D</span></h1>
+                <p>Matérialisez l'innovation. Du design numérique à l'objet fonctionnel.</p>
+                <div id="countdown">
+                    <div class="countdown-item">
+                        <div id="days">00</div>
+                        <span>Jours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="hours">00</div>
+                        <span>Heures</span>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="minutes">00</div>
+                        <span>Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="seconds">00</div>
+                        <span>Secondes</span>
+                    </div>
+                </div>
+                <a href="#registration" class="btn">Inscrivez votre idée</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>À Propos de l'Événement</h2>
+                <div class="content">
+                    <div class="text">
+                        <h3>Fabrication Additive et Design</h3>
+                        <p>Le Concours Impression 3D, piloté par le département Génie Sensoriel, est une compétition centrée sur l'innovation par la fabrication additive. Les équipes doivent imaginer, concevoir et prototyper un objet répondant à une problématique alliant fonctionnalité, design et perception sensorielle.</p>
+                        <br>
+                        <h3>Objectifs du Concours</h3>
+                        <p>Stimuler la créativité en design produit, explorer les limites des matériaux et des technologies FDM/SLA, et intégrer la dimension sensorielle (toucher, visuel, ergonomie) dans la conception. Ce challenge est une vitrine de l'ingénierie produit de demain. (Responsable: Manon ARIAS)</p>
+                    </div>
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1617791160536-595a78c18c48?q=80&w=2070&auto=format&fit=crop" alt="Impression 3D et design">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info">
+            <div class="container">
+                <h2>Informations Pratiques</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Dates</h3>
+                        <p>Samedi 24 & Dimanche 25 Octobre 2026</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Lieu</h3>
+                        <p>ENISE - FabLab & Pôle Sensoriel<br>58 Rue Jean Parot, 42023 Saint-Étienne</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Programme</h3>
+                        <p><strong>J1:</strong> Conception, slicing, impressions. <br><strong>J2:</strong> Post-traitement, tests & jury.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Inscrivez votre Idée</h2>
+                    <p>Les inscriptions sont ouvertes ! Remplissez le formulaire ci-dessous pour participer à l'aventure de la fabrication additive.</p>
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="team-name">Nom du projet / équipe</label>
+                            <input type="text" id="team-name" name="team-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="school">École / Université</label>
+                            <input type="text" id="school" name="school" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="leader-name">Nom du contact principal</label>
+                            <input type="text" id="leader-name" name="leader-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email de contact</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn">Soumettre l'inscription</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules">
+            <div class="container">
+                <div class="rules-container">
+                    <h2>Règlement et Contraintes</h2>
+                    <p>Un cahier des charges précis définit le thème de l'année, les matériaux autorisés et le volume d'impression maximal. La lecture du règlement est indispensable.</p>
+                    <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> Télécharger le règlement (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Galerie</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1593106578502-284a7c8d3686?q=80&w=2070&auto=format&fit=crop" alt="Photo 1">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1605330349915-c15b13285743?q=80&w=1925&auto=format&fit=crop" alt="Photo 2">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf0920?q=80&w=1974&auto=format&fit=crop" alt="Photo 3">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners">
+            <div class="container">
+                <h2>Nos Partenaires</h2>
+                <div class="partners-grid">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+1" alt="Logo Partenaire 1" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+2" alt="Logo Partenaire 2" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+3" alt="Logo Partenaire 3" class="partner-logo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>ENISE.GS</h4>
+                <p>Le concours Impression 3D du département Génie Sensoriel. Donnez forme à vos idées.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#info">Infos</a></li>
+                    <li><a href="#registration">Inscriptions</a></li>
+                    <li><a href="#rules">Règlement</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>
+                    <i class="fas fa-envelope"></i> contact.gs@enise.fr<br>
+                    <i class="fas fa-map-marker-alt"></i> 58 Rue Jean Parot, 42023 Saint-Étienne
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Restez informé.</p>
+                <form class="newsletter-form">
+                    <input type="email" name="email" placeholder="Votre email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2024 ENISE - École Centrale de Lyon. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Embedded Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- COUNTDOWN TIMER LOGIC ---
+            const countdownDate = new Date("January 31, 2026 09:00:00").getTime();
+
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                // If the countdown is finished, display a message
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "<div style='color:var(--text-light); font-size:1.5rem;'>L'événement a commencé !</div>";
+                    return;
+                }
+
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the HTML elements, ensuring they are padded with a leading zero if needed
+                document.getElementById("days").innerText = days.toString().padStart(2, "0");
+                document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+
+            }, 1000);
+
+            // --- MOBILE MENU TOGGLE ---
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                // Toggle the 'active' class on click
+                menuToggle.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+                // Close mobile menu when a navigation link is clicked
+                document.querySelectorAll(".nav-links a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        if (navLinks.classList.contains("active")) {
+                            navLinks.classList.remove("active");
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/transitions.js"></script>
+    <script src="../assets/js/forms.js"></script>
+</body>
+</html>

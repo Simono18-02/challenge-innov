@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Robotique 2026 - Génie Mécanique - École Centrale de Lyon ENISE</title>
+    <meta name="description" content="Challenge Robotique GM 2026 : course de robots suiveurs de ligne autonomes. Participez au défi de génie mécanique de l'ENISE. Inscriptions ouvertes.">
+    <meta name="keywords" content="robotique, robot suiveur ligne, génie mécanique, ENISE, challenge, compétition, étudiant">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Challenge Robotique 2026 - ENISE">
+    <meta property="og:description" content="Course de robots suiveurs de ligne autonomes. Challenge de génie mécanique pour étudiants.">
+    <meta property="og:type" content="website">
+    
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://images.unsplash.com data:; script-src 'self' 'unsafe-inline';">
+    
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-robotics.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-robotics.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/robotics.css">
+
+</head>
+<body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <a href="#navigation" class="skip-link">Aller à la navigation</a>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../index.html#events">Événements</a></li>
+            <li aria-current="page">Challenge Robotique</li>
+        </ol>
+    </nav>
+    
+	<div id="page-transition-overlay"></div>
+    <header class="header" id="navigation" role="banner">
+		<a href="../index.html" class="logo-link">
+			<img src="../assets/images/logo.png" alt="ENISE" class="logo-img">
+		</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#info">Infos pratiques</a></li>
+                <li><a href="#registration">Inscriptions</a></li>
+                <li><a href="#rules">Règlement</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#partners">Partenaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+<!-- NOUVELLE SECTION HERO AVEC VIDÉO -->
+		<section class="hero" id="home">
+			<!-- La vidéo en arrière-plan -->
+			<video autoplay loop muted playsinline id="hero-video">
+				<source src="../assets/videos/robotics-demo.mp4" type="video/mp4">
+				Votre navigateur ne supporte pas les vidéos HTML5.
+			</video>
+			<!-- Le filtre sombre par-dessus la vidéo pour la lisibilité -->
+			<div class="hero-overlay"></div>
+			
+			<!-- Le contenu textuel, maintenant dans un conteneur dédié -->
+			<div class="hero-content">
+				<h1>ENISE ROBOTICS <span>CHALLENGE</span></h1>
+				<p>Le week-end qui transforme Saint-Étienne en capitale française de la robotique étudiante.</p>
+				<div id="countdown">
+					<div class="countdown-item">
+						<div id="days">00</div>
+						<span>Jours</span>
+					</div>
+					<div class="countdown-item">
+						<div id="hours">00</div>
+						<span>Heures</span>
+					</div>
+					<div class="countdown-item">
+						<div id="minutes">00</div>
+						<span>Minutes</span>
+					</div>
+					<div class="countdown-item">
+						<div id="seconds">00</div>
+						<span>Secondes</span>
+					</div>
+				</div>
+				<a href="#registration" class="btn">Inscrivez votre équipe</a>
+			</div>
+		</section>
+
+        <!-- À PROPOS -->
+        <section id="about">
+            <div class="container">
+                <h2>À Propos de l'Événement</h2>
+                <div class="content">
+                    <div class="text">
+                        <h3>Les règles</h3>
+                        <p>L'ENISE Robotics Challenge, organisé par l'École Centrale de Lyon ENISE, est une compétition robotique ouvert à tous. Elle consite en une épreuve de robot autonome suiveur de ligne. Elle valorise les compétences pluridisciplinaires essentielles aux ingénieurs : programmation embarquée, conception mécanique, ingénierie électronique, et management de projet collaboratif.</p>
+                        <br>
+                        <h3>Nos Objectifs</h3>
+                        <p>Nous visons à renforcer le rayonnement de l'ENISE, à créer des synergies entre les grandes écoles, à valoriser l'expertise de nos étudiants auprès des industriels et à développer les partenariat avec l'école. Un rendez-vous incontournable pour inspirer les futurs ingénieurs et le grand public.</p>
+                    </div>
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2048&auto=format&fit=crop" alt="Robotique et technologie">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOS PRATIQUES -->
+        <section id="info">
+            <div class="container">
+                <h2>Informations Pratiques</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Dates</h3>
+                        <p>Samedi 31 Janvier & Dimanche 1er Février 2026</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Lieu</h3>
+                        <p>Centrale Lyon ENISE - Campus de Saint-Étienne<br>58 Rue Jean Parot, 42023 Saint-Étienne</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Programme</h3>
+                        <p><strong>Jour 1 :</strong> Accueil, essais libres, qualifications.<br><strong>Jour 2 :</strong> Phases finales, remise des prix.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>Conditions</h3>
+                        <p><strong>Inscription obligatoire :</strong> Inscrivez votre équipe via un des formulaire présent sur ce site.<br>Aucune restriction sur la compositions des équipes</p>
+                    </div>
+
+
+
+			
+                </div>
+            </div>
+        </section>
+
+        <!-- INSCRIPTIONS -->
+        <section id="registration">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Inscrivez votre Équipe</h2>
+                    <p>Les inscriptions sont ouvertes ! Remplissez le formulaire ci-dessous pour enregistrer votre équipe et participer à l'aventure. Places limitées.</p>
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="team-name">Nom de l'équipe</label>
+                            <input type="text" id="team-name" name="team-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="school">École / Université</label>
+                            <input type="text" id="school" name="school" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="leader-name">Nom du chef d'équipe</label>
+                            <input type="text" id="leader-name" name="leader-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email de contact</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                         <div class="form-group full-width">
+                            <button type="submit" class="btn">Soumettre l'inscription</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- RÈGLEMENT -->
+        <section id="rules">
+            <div class="container">
+                <div class="rules-container">
+                    <h2>Règlement et Spécifications</h2>
+                    <p>Le défi consiste à concevoir un robot 100% autonome capable de suivre une ligne noire sur fond blanc le plus rapidement possible. Assurez-vous de lire le règlement complet pour connaître toutes les spécifications techniques, les contraintes et les modalités de l'épreuve.</p>
+                    <a href="../assets/documents/reglement-robotique.pdf" class="btn btn-secondary" download="reglement-robotique.pdf">
+					<i class="fas fa-download"></i> Télécharger le règlement (PDF)
+					</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Galerie</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1678994223964-6089de9335f6?q=80&w=1974&auto=format&fit=crop" alt="Photo de l'événement 1">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1555255707-c07969078a5b?q=80&w=2070&auto=format&fit=crop" alt="Photo de l'événement 2">
+                        <div class="gallery-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581092921462-420101a21d23?q=80&w=2070&auto=format&fit=crop" alt="Photo de l'événement 3">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PARTENAIRES -->
+        <section id="partners">
+             <div class="container">
+                <h2>Nos Partenaires</h2>
+                <div class="partners-grid">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+1" alt="Logo Partenaire 1" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+2" alt="Logo Partenaire 2" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+3" alt="Logo Partenaire 3" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+4" alt="Logo Partenaire 4" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+5" alt="Logo Partenaire 5" class="partner-logo">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>ENISE.RC</h4>
+                <p>Une initiative de l'ENISE - École Centrale de Lyon pour promouvoir l'innovation, le talent étudiant et la passion pour la robotique.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                 <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#info">Infos pratiques</a></li>
+                    <li><a href="#registration">Inscriptions</a></li>
+                    <li><a href="#rules">Règlement</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>
+                    <i class="fas fa-envelope"></i> contact.robotics@enise.fr<br>
+                    <i class="fas fa-map-marker-alt"></i> 58 Rue Jean Parot, 42023 Saint-Étienne
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Restez informé des dernières actualités.</p>
+                <form class="newsletter-form">
+                    <input type="email" name="email" placeholder="Votre email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 ENISE Robotics Challenge - École Centrale de Lyon. Tous droits réservés.
+        </div>
+    </footer>
+
+      
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- COMPTE À REBOURS ---
+        const countdownDate = new Date("January 31, 2026 09:00:00").getTime();
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<div style='color:var(--text-light); font-size:1.5rem;'>L'événement a commencé !</div>";
+                return;
+            }
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+        }, 1000);
+        
+        // --- MENU HAMBURGER RESPONSIVE ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+        
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+    });
+</script>
+
+    <!-- External JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/transitions.js"></script>
+    <script src="../assets/js/forms.js"></script>
+</body>
+</html>

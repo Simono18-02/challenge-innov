@@ -1,0 +1,530 @@
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh; 
+    position: relative; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding: 0 20px; 
+    overflow: hidden;
+}
+
+#hero-video {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    transform: translateX(-50%) translateY(-50%); 
+    z-index: -2;
+}
+
+.hero-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: -1; 
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 1; 
+    width: 100%; 
+    max-width: 900px; 
+}
+
+.hero h1 { 
+    font-size: clamp(2.5rem, 5vw, 3.8rem); 
+    font-weight: 900; 
+    margin-bottom: 20px; 
+    color: var(--text-light); 
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
+}
+
+.hero p { 
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem); 
+    max-width: 700px; 
+    margin: 0 auto 40px auto; 
+    color: var(--light-bg); 
+    font-weight: 400; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6); 
+}
+
+/* Events Grid */
+.events-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+}
+
+.event-card {
+    background: var(--light-bg); 
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07); 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column;
+}
+
+.event-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
+}
+
+.event-card-icon { 
+    padding: 40px 20px 25px; 
+    font-size: 3.5rem; 
+}
+
+.event-card-icon .fa-hammer { color: #A0522D; }
+.event-card-icon .fa-robot { color: var(--tech-blue); }
+.event-card-icon .fa-cube { color: #6A0DAD; }
+.event-card-icon .fa-globe { color: #2E8B57; }
+
+.event-card-content { 
+    padding: 0 30px 30px; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.event-card h3 { 
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+}
+
+.event-card p { 
+    color: #666; 
+    margin-bottom: 25px; 
+    flex-grow: 1; 
+}
+
+.event-card .btn {
+    background-color: var(--section-bg); 
+    color: var(--text-dark); 
+    border-color: var(--border-color);
+    box-shadow: none; 
+    width: 100%;
+}
+
+.event-card:hover .btn { 
+    background-color: var(--primary-red); 
+    color: var(--text-light); 
+    border-color: var(--primary-red); 
+}
+
+/* Countdown Timer */
+.countdown-container,
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 100px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.countdown-item div {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    line-height: 1;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Organization Chart */
+.org-chart { 
+    text-align: center; 
+    padding-top: 40px; 
+}
+
+.org-level { 
+    display: flex; 
+    justify-content: center; 
+    position: relative; 
+}
+
+.president-level { 
+    margin-bottom: 80px; 
+}
+
+.team-level { 
+    justify-content: space-around; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.org-card {
+    background: var(--light-bg); 
+    padding: 20px 30px; 
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07); 
+    border: 2px solid var(--border-color);
+    width: 220px; 
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    opacity: 0; 
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.org-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
+    border-color: var(--primary-red); 
+}
+
+.org-card h4 { 
+    font-size: 1.3rem; 
+    color: var(--primary-red); 
+    margin-bottom: 5px; 
+}
+
+.org-card p { 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    color: var(--text-dark); 
+}
+
+.president-level .org-card::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -40px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 2px; 
+    height: 40px; 
+    background-color: var(--border-color); 
+}
+
+.team-level::before { 
+    content: ''; 
+    position: absolute; 
+    top: -40px; 
+    left: 15%; 
+    right: 15%; 
+    height: 2px; 
+    background-color: var(--border-color); 
+}
+
+.team-level .org-card::before { 
+    content: ''; 
+    position: absolute; 
+    top: -40px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 2px; 
+    height: 40px; 
+    background-color: var(--border-color); 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+#president { animation-delay: 0.1s; }
+#gm { animation-delay: 0.3s; }
+#gs { animation-delay: 0.4s; }
+#gc { animation-delay: 0.5s; }
+
+.descriptions-container { 
+    max-width: 900px; 
+    margin: 80px auto 0 auto; 
+    text-align: left; 
+}
+
+.description-item { 
+    background: var(--light-bg); 
+    padding: 25px; 
+    border-radius: 10px; 
+    margin-bottom: 20px; 
+    border-left: 5px solid var(--primary-red); 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06); 
+}
+
+.description-item h4 { 
+    font-size: 1.4rem; 
+    color: var(--text-dark); 
+    margin-bottom: 10px; 
+}
+
+.description-item p { 
+    color: #555; 
+}
+
+/* President Section */
+#president-word .president-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 50px; 
+    max-width: 1000px;
+}
+
+#president-word .president-photo { 
+    flex-shrink: 0; 
+}
+
+#president-word .president-photo img {
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 50%;
+    border: 2px solid #C41E3A; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#president-word .president-text { 
+    text-align: left; 
+}
+
+#president-word .president-text p { 
+    margin-bottom: 1.5em; 
+    color: #555; 
+}
+
+#president-word .president-text .signature { 
+    font-weight: 600; 
+    text-align: right; 
+    color: var(--text-dark); 
+}
+
+/* Partners Section */
+#partners .partners-logos { 
+    text-align: center; 
+    color: #666; 
+    margin-bottom: 50px; 
+}
+
+#partners .partner-cta { 
+    text-align: center; 
+}
+
+/* Calendar Section */
+.calendar-list { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    list-style: none; 
+}
+
+.calendar-item {
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    background: var(--light-bg);
+    padding: 25px; 
+    border-radius: 10px; 
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.calendar-item:hover { 
+    transform: scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+}
+
+.calendar-date {
+    background: var(--primary-red); 
+    color: var(--text-light); 
+    text-align: center;
+    padding: 15px; 
+    border-radius: 8px; 
+    min-width: 90px;
+}
+
+.calendar-date span { 
+    display: block; 
+}
+
+.calendar-date .month { 
+    font-size: 1rem; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+}
+
+.calendar-date .days { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+}
+
+.calendar-details h3 { 
+    font-size: 1.4rem; 
+    color: var(--text-dark); 
+}
+
+.calendar-details p { 
+    color: #666; 
+    font-style: italic; 
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(196, 30, 58, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+/* About Section */
+#about .about-intro { 
+    text-align: center; 
+    max-width: 800px; 
+    margin: 0 auto 60px auto; 
+    font-size: 1.1rem; 
+    color: #555; 
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 15px;
+    }
+    
+    #hero-video {
+        display: none;
+    }
+    
+    .hero {
+        background: linear-gradient(135deg, var(--primary-red), var(--tech-blue));
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .countdown-container {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 15px 10px;
+    }
+    
+    .countdown-item div {
+        font-size: 1.8rem;
+    }
+    
+    .org-level {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .team-level::before {
+        display: none;
+    }
+    
+    .team-level .org-card::before {
+        display: none;
+    }
+    
+    .president-level .org-card::after {
+        display: none;
+    }
+    
+    #president-word .president-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    #president-word .president-photo img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    
+    .calendar-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .countdown-item {
+        min-width: 70px;
+        padding: 10px 8px;
+    }
+    
+    .countdown-item div {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-item span {
+        font-size: 0.8rem;
+    }
+}

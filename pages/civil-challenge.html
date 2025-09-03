@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concours Artisanat - École Centrale de Lyon</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-civil.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-civil.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/civil.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+		<a href="../index.html" class="logo">
+			<img src="../assets/images/logo.png" alt="ENISE" class="logo-img">
+		</a>    
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#info">Infos</a></li>
+                <li><a href="#registration">Inscriptions</a></li>
+                <li><a href="#rules">Règlement</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <video autoplay loop muted playsinline id="hero-video" src="https://assets.mixkit.co/videos/preview/mixkit-man-sanding-a-piece-of-wood-in-a-workshop-43892-large.mp4"></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>CONCOURS <span>ARTISANAT</span></h1>
+                <p>Quand l'ingénierie rencontre le savoir-faire. Bâtissez l'avenir, honorez la tradition.</p>
+                <div id="countdown">
+                    <div class="countdown-item">
+                        <div id="days">00</div>
+                        <span>Jours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="hours">00</div>
+                        <span>Heures</span>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="minutes">00</div>
+                        <span>Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="seconds">00</div>
+                        <span>Secondes</span>
+                    </div>
+                </div>
+                <a href="#registration" class="btn">Inscrivez votre projet</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>À Propos de l'Événement</h2>
+                <div class="content">
+                    <div class="text">
+                        <h3>L'Art de Construire</h3>
+                        <p>Organisé par le département Génie Civil de l'ENISE, le Concours Artisanat est une épreuve unique qui met au défi les étudiants de concevoir et réaliser une structure en respectant des techniques artisanales et des matériaux nobles. C'est un hommage à l'art de bâtir et un défi à la créativité structurelle.</p>
+                        <br>
+                        <h3>Objectifs du Défi</h3>
+                        <p>Nous cherchons à valoriser les compétences en conception structurelle, la connaissance des matériaux traditionnels (bois, pierre, métal) et la capacité à innover dans le respect des contraintes. Ce concours est une plateforme pour démontrer que l'ingénierie moderne et le savoir-faire ancestral sont profondément liés. (Responsable: Mathias AUPECLE)</p>
+                    </div>
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1593962299835-12a4505a7608?q=80&w=1974&auto=format&fit=crop" alt="Artisanat et construction">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info">
+            <div class="container">
+                <h2>Informations Pratiques</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Dates</h3>
+                        <p>Samedi 18 au Lundi 20 Avril 2026</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Lieu</h3>
+                        <p>ENISE - Ateliers Génie Civil<br>58 Rue Jean Parot, 42023 Saint-Étienne</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Programme</h3>
+                        <p><strong>J1:</strong> Accueil, matériaux. <br><strong>J2:</strong> Construction. <br><strong>J3:</strong> Jury et prix.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Inscrivez votre Projet</h2>
+                    <p>Les inscriptions sont ouvertes ! Remplissez le formulaire ci-dessous pour enregistrer votre équipe et relever le défi.</p>
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="team-name">Nom de l'équipe</label>
+                            <input type="text" id="team-name" name="team-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="school">École / Université</label>
+                            <input type="text" id="school" name="school" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="leader-name">Nom du chef de projet</label>
+                            <input type="text" id="leader-name" name="leader-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email de contact</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn">Soumettre l'inscription</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules">
+            <div class="container">
+                <div class="rules-container">
+                    <h2>Règlement et Matériaux</h2>
+                    <p>Le défi impose des contraintes précises sur les matériaux utilisables et les techniques d'assemblage. Consultez le règlement pour préparer votre projet.</p>
+                    <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> Télécharger le règlement (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Galerie</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556912173-35feb391b193?q=80&w=2070&auto=format&fit=crop" alt="Photo 1">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1494781422243-e23e5a4f76a6?q=80&w=1974&auto=format&fit=crop" alt="Photo 2">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" alt="Photo 3">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners">
+            <div class="container">
+                <h2>Nos Partenaires</h2>
+                <div class="partners-grid">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+1" alt="Logo Partenaire 1" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+2" alt="Logo Partenaire 2" class="partner-logo">
+                    <img src="https://via.placeholder.com/160x70/FFFFFF/000000?text=Partenaire+3" alt="Logo Partenaire 3" class="partner-logo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>ENISE.GC</h4>
+                <p>Le concours Artisanat du département Génie Civil. Bâtir avec sens et créativité.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#info">Infos</a></li>
+                    <li><a href="#registration">Inscriptions</a></li>
+                    <li><a href="#rules">Règlement</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>
+                    <i class="fas fa-envelope"></i> contact.gc@enise.fr<br>
+                    <i class="fas fa-map-marker-alt"></i> 58 Rue Jean Parot, 42023 Saint-Étienne
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Restez informé.</p>
+                <form class="newsletter-form">
+                    <input type="email" name="email" placeholder="Votre email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2024 ENISE - École Centrale de Lyon. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Embedded Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- COUNTDOWN TIMER LOGIC ---
+            const countdownDate = new Date("January 31, 2026 09:00:00").getTime();
+
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                // If the countdown is finished, display a message
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "<div style='color:var(--text-light); font-size:1.5rem;'>L'événement a commencé !</div>";
+                    return;
+                }
+
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the HTML elements, ensuring they are padded with a leading zero if needed
+                document.getElementById("days").innerText = days.toString().padStart(2, "0");
+                document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+
+            }, 1000);
+
+            // --- MOBILE MENU TOGGLE ---
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                // Toggle the 'active' class on click
+                menuToggle.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+                // Close mobile menu when a navigation link is clicked
+                document.querySelectorAll(".nav-links a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        if (navLinks.classList.contains("active")) {
+                            navLinks.classList.remove("active");
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/transitions.js"></script>
+    <script src="../assets/js/forms.js"></script>
+</body>
+</html>

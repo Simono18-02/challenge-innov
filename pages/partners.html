@@ -13,7 +13,7 @@
     <!-- Icônes Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
 
     <style>
         /* --- VARIABLES DE DESIGN ET RESET --- */
@@ -128,13 +128,13 @@
         .form-group { display: flex; flex-direction: column; }
         .form-group.full-width { grid-column: 1 / -1; }
         .form-group label { margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .form-group input, .form-group textarea {
+        .form-group input, .form-group textarea, .form-group select {
             padding: 14px; border: 1px solid var(--border-color);
             border-radius: 8px; color: var(--text-dark);
             font-size: 1rem; font-family: 'Poppins', sans-serif;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-red); box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1); }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--primary-red); box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1); }
         .form-group textarea { resize: vertical; min-height: 120px; }
 
         /* --- FOOTER --- */
@@ -204,11 +204,11 @@
     </style>
 </head>
 <body>
-    <div id="page-transition-overlay" class="visible"></div>
+    <div id="page-transition-overlay"></div>
 
     <header class="header">
 		<a href="../index.html" class="logo-link">
-			<img src="../logo.png" alt="ENISE Logo" class="logo-img">
+			<img src="../assets/images/logo.png" alt="ENISE Logo" class="logo-img">
 		</a>
         <nav>
             <ul class="nav-links">
@@ -267,14 +267,14 @@
             <div class="container">
                 <h2>Construisons un partenariat à votre image</h2>
                 <div class="form-container">
-                    <form action="https://formspree.io/f/YOUR_UNIQUE_CODE" method="POST" class="form">
+                    <form action="#" method="POST" class="form">
                         <div class="form-group">
                             <label for="company-name">Nom de l'entreprise *</label>
-                            <input type="text" id="company-name" name="entreprise" required>
+                            <input type="text" id="company-name" name="company-name" required>
                         </div>
                         <div class="form-group">
                             <label for="contact-name">Votre nom *</label>
-                            <input type="text" id="contact-name" name="nom" required>
+                            <input type="text" id="contact-name" name="contact-name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email de contact *</label>
@@ -282,7 +282,21 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="telephone">
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="partnership-type">Type de partenariat *</label>
+                            <select id="partnership-type" name="partnership-type" required>
+                                <option value="">Choisissez un type</option>
+                                <option value="gold">Partenaire Majoritaire</option>
+                                <option value="silver">Partenaire Soutien</option>
+                                <option value="bronze">Partenaire Officiel</option>
+                                <option value="custom">Partenariat sur mesure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget envisagé (optionnel)</label>
+                            <input type="text" id="budget" name="budget" placeholder="Ex: 5000€">
                         </div>
                         <div class="form-group full-width">
                             <label for="message">Votre message</label>
@@ -331,11 +345,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const overlay = document.getElementById('page-transition-overlay');
-            if (overlay) {
-                // Fait disparaître le calque de transition au chargement
-                overlay.classList.remove('visible');
-            }
             
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -346,26 +355,11 @@
                 });
             }
 
-            const allLinks = document.querySelectorAll('a:not([href="#"])');
-            if (overlay && allLinks.length > 0) {
-                 allLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        const destinationUrl = link.href;
-                        const currentUrl = window.location.href;
-
-                        // Applique la transition seulement si le lien mène vers une autre page
-                        // et n'est pas une simple ancre.
-                        if (destinationUrl && destinationUrl !== currentUrl && !destinationUrl.includes('#')) {
-                            e.preventDefault(); 
-                            overlay.classList.add('visible');
-                            setTimeout(() => {
-                                window.location.href = destinationUrl;
-                            }, 500); // Durée de la transition
-                        }
-                    });
-                });
-            }
         });
     </script>
+    
+    <!-- External JavaScript -->
+    <script src="../assets/js/transitions.js"></script>
+    <script src="../assets/js/forms.js"></script>
 </body>
 </html>
